@@ -6,10 +6,17 @@ image previews, and a guided three-step workflow.
 
 ## Start
 
-Install Python 3.10 or newer from python.org. On Windows, double-click
-**Start-Windows.bat**. The fixed launcher opens the app in your browser and does
-not require Tcl/Tk. Keep the launcher window open while using the app.
-Python is required; this download is not a standalone EXE.
+On Windows, extract the ZIP to a new folder and double-click **Start-Windows.bat**.
+The launcher selects stable Python 3.10 through 3.13 for image processing. It never
+reuses the old `.venv` or uses Python 3.15 for Pillow. If only Python 3.15 is
+installed, it installs Python 3.13 alongside it using Windows Package Manager
+(winget), without uninstalling your existing Python. Package verification remains
+enabled. If winget is unavailable, install Python 3.13 from python.org and retry.
+
+The fixed launcher opens the app in your browser and does not require Tcl/Tk.
+Keep the launcher window open while using the app. This is not a standalone EXE.
+Existing Python is needed to run the bootstrap; the reported Windows machine
+already has it. A machine with no Python should install Python 3.13 first.
 The first launch downloads the pinned Pillow dependency from PyPI. Subsequent
 launches reuse the local virtual environment. Images stay on your computer.
 
