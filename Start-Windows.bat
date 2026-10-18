@@ -15,12 +15,12 @@ if errorlevel 1 (
   .venv\Scripts\python.exe -m pip install -r requirements.txt
   if errorlevel 1 goto failed
 )
-echo Opening the Render Workshop desktop application.
-.venv\Scripts\python.exe -c "import tkinter; import PIL.ImageTk" >nul 2>nul
+echo Opening Render Workshop in your browser. No Tcl/Tk installation is needed.
+.venv\Scripts\python.exe launch.py
 if errorlevel 1 goto failed
-start "" .venv\Scripts\pythonw.exe desktop.py
 exit /b 0
 :failed
-echo Could not start. Install Python 3.10 or newer from python.org with Python on PATH and Tcl/Tk enabled, then retry.
+echo Render Workshop could not start. The actual error is shown above.
+echo Python 3.10 or newer with pip is required. Tcl/Tk is NOT required.
 pause
 exit /b 1

@@ -6,20 +6,22 @@ image previews, and a guided three-step workflow.
 
 ## Start
 
-Install Python 3.10 or newer from python.org, including Tcl/Tk (included in the
-normal Windows installer). On Windows, double-click **Start-Windows.bat** to open
-the native application. Python is required; this download is not a standalone EXE.
+Install Python 3.10 or newer from python.org. On Windows, double-click
+**Start-Windows.bat**. The fixed launcher opens the app in your browser and does
+not require Tcl/Tk. Keep the launcher window open while using the app.
+Python is required; this download is not a standalone EXE.
 The first launch downloads the pinned Pillow dependency from PyPI. Subsequent
 launches reuse the local virtual environment. Images stay on your computer.
 
-The desktop app saves to a new `Converted-renders-...` folder inside the destination
+The optional desktop app saves to a new `Converted-renders-...` folder inside the destination
 you choose. Click **Open output folder** when done. Original names and subfolders
 are retained. The per-file report lists any conversion failures. Each export uses
 a unique folder, so earlier exports and source files are never replaced.
 
 For the optional browser version on Linux/macOS, run `bash start.sh`. For the
-native version with Tk installed, run `.venv/bin/python desktop.py` after dependency
-installation. Linux may require its distribution's `python3-tk` package.
+native version with Tk installed, run `.venv/bin/python launch.py --desktop` after dependency
+installation. This tries the desktop window first and falls back to the browser
+if it fails. Linux desktop mode may require its distribution's `python3-tk` package.
 
 In the optional browser version, choose a folder or individual files, inspect the
 results, and download the ZIP. Extract it separately and read `conversion-report.json`
